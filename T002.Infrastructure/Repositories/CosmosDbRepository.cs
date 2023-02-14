@@ -1,7 +1,6 @@
 ﻿using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Newtonsoft.Json;
-using System.Reflection.Metadata;
 using T002.Core.Interfaces;
 using T002.Core.Models;
 using T002.Infrastructure.Data;

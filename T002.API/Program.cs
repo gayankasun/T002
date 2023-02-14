@@ -1,5 +1,9 @@
 var builder = WebApplication.CreateBuilder(args);
 
+var cosmosURL = builder.Configuration.GetValue<string>("CosmosDB:URL");
+var cosmosPrimarykey = builder.Configuration.GetValue<string>("CosmosDB:PrimaryKey");
+
+
 // Add services to the container.
 
 builder.Services.AddControllers();

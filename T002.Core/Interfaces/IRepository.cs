@@ -2,7 +2,7 @@
 
 namespace T002.Core.Interfaces
 {
-	public interface IRepository<T> where T : DbEntity
+	public interface IRepository<T> where T : Db
     {
         Task<T> GetByIdAsync(string id);
         Task<T> AddAsync(T entity);

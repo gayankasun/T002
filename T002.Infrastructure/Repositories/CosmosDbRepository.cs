@@ -7,7 +7,7 @@ using T002.Infrastructure.Data;
 
 namespace T002.Infrastructure.Repositories
 {
-	public abstract class CosmosDbRepository<T>: IRepository<T>, IDocumentBaseContext<T> where T: DbEntity
+	public abstract class CosmosDbRepository<T>: IRepository<T>, IDocumentBaseContext<T> where T: Db
     {
         private readonly ICosmosDbClientFactory _cosmosDbClientFactory;
         protected CosmosDbRepository(ICosmosDbClientFactory cosmosDbClientFactory)

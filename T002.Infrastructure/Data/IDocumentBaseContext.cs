@@ -3,7 +3,7 @@ using T002.Core.Models;
 
 namespace T002.Infrastructure.Data
 {
-    public interface IDocumentBaseContext<in T> where T: DbEntity
+    public interface IDocumentBaseContext<in T> where T: Db
     {
         string CollectionName { get; }
         string GenerateNewId(T entity);

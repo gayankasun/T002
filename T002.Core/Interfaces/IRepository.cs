@@ -1,4 +1,5 @@
-﻿using T002.Core.Models;
+﻿using System.Threading.Tasks;
+using T002.Core.Models;
 
 namespace T002.Core.Interfaces
 {

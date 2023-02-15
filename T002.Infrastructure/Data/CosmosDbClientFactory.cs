@@ -1,5 +1,8 @@
 ﻿using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace T002.Infrastructure.Data
 {

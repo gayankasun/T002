@@ -1,5 +1,7 @@
 ﻿using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
+using System.Threading;
+using System.Threading.Tasks;
 using RequestOptions = Microsoft.Azure.Documents.Client.RequestOptions;
 
 namespace T002.Infrastructure.Data

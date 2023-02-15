@@ -1,4 +1,6 @@
-﻿namespace T002.Core.Models
+﻿using System;
+
+namespace T002.Core.Models
 {
 	public class InvoiceHeader
     {

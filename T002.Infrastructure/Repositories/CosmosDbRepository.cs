@@ -1,9 +1,12 @@
 ﻿using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Newtonsoft.Json;
+using System;
+using System.Threading.Tasks;
 using T002.Core.Interfaces;
 using T002.Core.Models;
 using T002.Infrastructure.Data;
+using T002.Infrastructure.Interfaces;
 
 namespace T002.Infrastructure.Repositories
 {

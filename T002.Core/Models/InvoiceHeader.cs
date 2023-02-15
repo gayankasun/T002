@@ -13,5 +13,6 @@ namespace T002.Core.Models
         public string SupplierId { get; set; }
         public string SupplierCode { get; set; }
         public string SupplierName { get; set; }
+        public InvoiceLineItem[] LineItems { get; set; }
     }
 }

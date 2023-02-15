@@ -60,7 +60,6 @@ namespace T002.Infrastructure.Repositories
                 PartitionKey = ResolvePartitionKey(entity.Id)
             });
         }
-
         public abstract string CollectionName { get; }
         public virtual PartitionKey ResolvePartitionKey(string entityId) => null;
         public virtual string GenerateNewId(T entity) => Guid.NewGuid().ToString();

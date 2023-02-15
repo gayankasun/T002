@@ -3,10 +3,8 @@ using System.Threading.Tasks;
 using T002.Core.Interfaces;
 using T002.Core.Models;
 
-namespace T002.API.Controllers
+namespace WEBAPI.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
     public class InvoiceController : Controller
     {
         private readonly IInvoiceHeaderRepository _invoiceHeaderRepository;
@@ -41,10 +39,7 @@ namespace T002.API.Controllers
         [Route("get")]
         public async Task<ActionResult> GetInvoice(string InvoiceId)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest();
-            }
+
             var invoice = await _invoiceHeaderRepository.GetByIdAsync(InvoiceId);
 
             return Ok(invoice);

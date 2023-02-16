@@ -5,12 +5,11 @@ using System;
 using System.Threading.Tasks;
 using T002.Core.Interfaces;
 using T002.Core.Models;
-using T002.Infrastructure.Data;
-using T002.Infrastructure.Interfaces;
+
 
 namespace T002.Infrastructure.Repositories
 {
-	public abstract class CosmosDbRepository<T>: IRepository<T>, IDocumentBaseContext<T> where T: Db
+	public abstract class CosmosDbRepository<T>: IRepository<T>
     {
         private readonly ICosmosDbClientFactory _cosmosDbClientFactory;
         protected CosmosDbRepository(ICosmosDbClientFactory cosmosDbClientFactory)

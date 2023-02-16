@@ -1,24 +1,23 @@
 ﻿using Microsoft.Azure.Cosmos;
 using System.Threading.Tasks;
-using T002.Core.Data;
 using T002.Core.Interfaces;
-using T002.Core.Models;
-using Database = Microsoft.Azure.Cosmos.Database;
 
-namespace T002.Infrastructure.Repositories
+namespace T002.Core.Data
 {
-    public class InvoiceHeaderRepository : IInvoiceHeaderRepository
+    public class CosmosDB : IRepository
     {
+        private CosmosClient _cosmosClient = null;
+        private Database _database = null;
+        private Container _container = null;
 
-
-        private CosmosDB cosmosDB = null;
-
-        public InvoiceHeaderRepository(CosmosDB cosmosDB)
+        public CosmosDB(CosmosClient cosmosClient ,Container cosmosContainer, Database database)
         {
-         
+            _cosmosClient = cosmosClient;
+            _database = database;
+            _container = cosmosContainer;
         }
 
-        public async Task<Invoice> AddAsync(Invoice entity)
+        public async Task<T> AddAsync(T entity)
         {
             return await this.container.CreateItemAsync<Invoice>(entity, new PartitionKey(entity.Id));
         }
@@ -36,6 +35,7 @@ namespace T002.Infrastructure.Repositories
         {
             return await this.container.ReplaceItemAsync<Invoice>(entity, entity.Id, new PartitionKey(entity.Id));
         }
+
 
 
     }

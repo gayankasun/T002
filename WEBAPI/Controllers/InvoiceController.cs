@@ -19,7 +19,7 @@ namespace WEBAPI.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("add")]
-        public async Task<ActionResult> CreateInvoice([FromBody] InvoiceHeader invoiceHeader)
+        public async Task<ActionResult> CreateInvoice([FromBody] Invoice invoiceHeader)
         {
             if (!ModelState.IsValid)
             {

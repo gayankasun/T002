@@ -2,7 +2,7 @@
 
 namespace T002.Core.Models
 {
-	public class InvoiceHeader: Db
+	public class Invoice: Db
     {
 		public int InvoiceNo { get; set; }
         public string Description { get; set; }

@@ -25,17 +25,17 @@ namespace WEBAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionStringsOptions =Configuration.GetSection("ConnectionStrings").Get<ConnectionStringsOptions>();
-            var cosmosDbOptions = Configuration.GetSection("CosmosDb").Get<CosmosDbOptions>();
-            var (serviceEndpoint, authKey) = connectionStringsOptions.ActiveConnectionStringOptions;
-            var (databaseName, collectionData) = cosmosDbOptions;
-            var collectionNames = collectionData.Select(c => c.Name).ToList();
+            //var connectionStringsOptions =Configuration.GetSection("ConnectionStrings").Get<ConnectionStringsOptions>();
+            //var cosmosDbOptions = Configuration.GetSection("CosmosDb").Get<CosmosDbOptions>();
+            //var (serviceEndpoint, authKey) = connectionStringsOptions.ActiveConnectionStringOptions;
+            //var (databaseName, collectionData) = cosmosDbOptions;
+            //var collectionNames = collectionData.Select(c => c.Name).ToList();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WEBAPI", Version = "v1" });
             });
-            services.AddCosmosDb(serviceEndpoint, authKey, databaseName, collectionNames);
+            //services.AddCosmosDb(serviceEndpoint, authKey, databaseName, collectionNames);
             services.AddScoped<IInvoiceHeaderRepository, InvoiceHeaderRepository>();
             services.AddScoped<ICosmosDbClientFactory, CosmosDbClientFactory>();
 

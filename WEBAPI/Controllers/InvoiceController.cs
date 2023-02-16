@@ -5,7 +5,7 @@ using T002.Core.Models;
 
 namespace WEBAPI.Controllers
 {
-    public class InvoiceController : Controller
+    public class InvoiceController : ControllerBase
     {
         private readonly IInvoiceHeaderRepository _invoiceHeaderRepository;
         public InvoiceController(IInvoiceHeaderRepository invoiceHeaderRepository)
